@@ -7,3 +7,4 @@
   ```
   pip install -r requirements.txt
   ```
+- in the first week the target is to build a simple agent with context presence judge and web search as tools included so we will begin setting up the project structure and building those tools and testing them individually before integrating them into the agent 
