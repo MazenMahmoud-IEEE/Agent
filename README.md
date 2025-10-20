@@ -8,4 +8,12 @@
   ```
   pip install -r requirements.txt
   ```
-  
+- you have to install the ollama app in addition to the package in the requirements.txt to run it locally and download the model you want to use
+after installing ollama run the command below to download the model
+  ```
+  ollama pull <model_name>
+  ```
+   for example to download the llama3.2:1b model run 
+   ```
+   ollama pull llama3.2:1b
+   ```
