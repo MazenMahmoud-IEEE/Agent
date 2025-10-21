@@ -17,3 +17,8 @@ after installing ollama run the command below to download the model
    ```
    ollama pull llama3.2:1b
    ```
+- you can have the postman collection for testing the apis in the assets folder
+- in the tools folder there are two tools context presence judge and web search for week 1
+- in the prompts folder there is the prompts we are using for the tools
+- in the tests folder there are unit tests for the tools
+- in the api folder there are we transform the tools into apis using fastapi

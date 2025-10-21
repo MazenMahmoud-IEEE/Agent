@@ -1,0 +1,777 @@
+{
+	"info": {
+		"_postman_id": "331c9b7a-308f-4603-b6ab-a72f3785615c",
+		"name": "Agent",
+		"description": "Collection to test the latest project in the Cellula Technologies internship named \"Agent\"",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "49439947",
+		"_collection_link": "https://mazenmahmoud675-8836816.postman.co/workspace/Mazen-Mahmoud's-Workspace~96f07a27-5a56-4fc3-875b-2b2689408d81/collection/49439947-331c9b7a-308f-4603-b6ab-a72f3785615c?action=share&source=collection_link&creator=49439947"
+	},
+	"item": [
+		{
+			"name": "check_website",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": [
+				{
+					"name": "New Request",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								""
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "date",
+							"value": "Tue, 21 Oct 2025 12:38:55 GMT"
+						},
+						{
+							"key": "server",
+							"value": "uvicorn"
+						},
+						{
+							"key": "content-length",
+							"value": "90"
+						},
+						{
+							"key": "content-type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": \"ok\",\n    \"message\": \"Agent API (Week1). Use /api/presence_judge and /api/web_search\"\n}"
+				}
+			]
+		},
+		{
+			"name": "context_judge",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"query\": \"Explain data science briefly\"}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/context_judge",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"context_judge"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "New Request",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/context_judge",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"context_judge"
+							]
+						}
+					},
+					"status": "Unprocessable Entity",
+					"code": 422,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "date",
+							"value": "Tue, 21 Oct 2025 12:41:57 GMT"
+						},
+						{
+							"key": "server",
+							"value": "uvicorn"
+						},
+						{
+							"key": "content-length",
+							"value": "91"
+						},
+						{
+							"key": "content-type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"detail\": [\n        {\n            \"type\": \"missing\",\n            \"loc\": [\n                \"query\",\n                \"query\"\n            ],\n            \"msg\": \"Field required\",\n            \"input\": null\n        }\n    ]\n}"
+				},
+				{
+					"name": "New Request",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"query\": \"Explain data science briefly\"}",
+							"options": {
+								"raw": "json"
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/context_judge?query=Explain%20data%20science%20briefly",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"context_judge"
+							],
+							"query": [
+								{
+									"key": "query",
+									"value": "Explain data science briefly"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "date",
+							"value": "Tue, 21 Oct 2025 12:46:00 GMT"
+						},
+						{
+							"key": "server",
+							"value": "uvicorn"
+						},
+						{
+							"key": "content-length",
+							"value": "1602"
+						},
+						{
+							"key": "content-type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"tool\": \"context_presence_judge\",\n    \"query\": \"Explain data science briefly\",\n    \"raw\": {\n        \"llm_raw\": \"I'd classify the given user message as including some background context. Here's why:\\n\\n* The phrase \\\"data science briefly\\\" suggests that there might be prior knowledge or understanding of what data science entails, which implies some level of context.\\n* The question \\\"Explain [blank] briefly\\\" is a typical way to ask for an explanation in the field of data science, indicating that the user is expecting a brief and possibly technical explanation.\\n\\nHowever, the actual content of the message \\\"data science\\\" doesn't provide much background information. It's likely that this is a straightforward question, and the answer could be provided without any additional context. Therefore, I would output \\\"context_missing\\\".\"\n    },\n    \"clean\": {\n        \"decision\": \"context_provided\",\n        \"extracted\": \"I'd classify the given user message as including some background context. Here's why:\\n\\n* The phrase \\\"data science briefly\\\" suggests that there might be prior knowledge or understanding of what data science entails, which implies some level of context.\\n* The question \\\"Explain [blank] briefly\\\" is a typical way to ask for an explanation in the field of data science, indicating that the user is expecting a brief and possibly technical explanation.\\n\\nHowever, the actual content of the message \\\"data science\\\" doesn't provide much background information. It's likely that this is a straightforward question, and the answer could be provided without any additional context. Therefore, I would output \\\"context_missing\\\".\"\n    }\n}"
+				},
+				{
+					"name": "New Request",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"query\": \"what is the latest updates regarding the Egyptian Gold Market during the latest 6 months\"}",
+							"options": {
+								"raw": "text"
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/context_judge?query=what%20is%20the%20latest%20updates%20regarding%20the...",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"context_judge"
+							],
+							"query": [
+								{
+									"key": "query",
+									"value": "what is the latest updates regarding the..."
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "date",
+							"value": "Tue, 21 Oct 2025 12:48:08 GMT"
+						},
+						{
+							"key": "server",
+							"value": "uvicorn"
+						},
+						{
+							"key": "content-length",
+							"value": "660"
+						},
+						{
+							"key": "content-type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"tool\": \"context_presence_judge\",\n    \"query\": \"what is the latest updates regarding the...\",\n    \"raw\": {\n        \"llm_raw\": \"The user message is a direct question. There's no mention of any background context, and it seems to be asking for information without providing any specific details about what they are referring to. The correct output should be \\\"context_missing\\\".\"\n    },\n    \"clean\": {\n        \"decision\": \"context_missing\",\n        \"extracted\": \"The user message is a direct question. There's no mention of any background context, and it seems to be asking for information without providing any specific details about what they are referring to. The correct output should be \\\"context_missing\\\".\"\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "web_search",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": [
+				{
+					"name": "New Request",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/web_search?query=what%20is%20the%20latest%20updates%20regarding%20the...",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"web_search"
+							],
+							"query": [
+								{
+									"key": "query",
+									"value": "what is the latest updates regarding the..."
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "date",
+							"value": "Tue, 21 Oct 2025 12:52:20 GMT"
+						},
+						{
+							"key": "server",
+							"value": "uvicorn"
+						},
+						{
+							"key": "content-length",
+							"value": "10068"
+						},
+						{
+							"key": "content-type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"tool\": \"web_search\",\n    \"query\": \"what is the latest updates regarding the...\",\n    \"raw\": {\n        \"results\": [\n            {\n                \"title\": \"World | Latest News & Updates - BBC\",\n                \"url\": \"https://www.bbc.com/news/world\",\n                \"content\": \"The Louvre Museum in Paris remains closed to the public after robbers stole imperial jewels in broad daylight on Sunday.\\n\\n## Latest updates\\n\\nPatrick Moynihan after breaching th Senate Chamber\\n\\n## Pardoned Capitol rioter arrested for allegedly threatening to kill top Democrat\\n\\nChristopher Moynihan, who had been sentenced to 21 months for the riot, allegedly said Hakeem Jeffries \\\"must be eliminated\\\".\\n\\nTwo excavators are pictured on either side of a set of yellow blocks on sandy ground in Gaza [...] Meanwhile US President Donald Trump says a \\\"heavy force\\\" could go into Gaza \\\"if Hamas continues to act badly\\\".\\n\\nDaniel Naroditsky\\n\\n## US chess grandmaster Daniel Naroditsky dies aged 29\\n\\nThe young prodigy's \\\"unexpected passing\\\" was announced by his family on Monday.\\n\\n## Woman charged after 1.5m euros of gold stolen from Paris museum\\n\\nProsecutors say the woman was arrested in Barcelona with around a kilogram of melted-down gold. [...] ## Israel's 'yellow line' in Gaza gives Netanyahu room for manoeuvre\\n\\nIsraeli forces have pulled back to a boundary which leaves Israel in control of most of Gaza - keeping far-right ministers on Netanyahu's side, for now.\\n\\nUkrainian servicemen from an anti-drone mobile air defence unit fire a M2 Browning machine gun during combat shift on the front line in the Donetsk region\\n\\n## Europe's leaders back Trump call for frontline freeze but Russia says no\",\n                \"score\": 0.43367022\n            },\n            {\n                \"title\": \"Fox News - Breaking News Updates | Latest News Headlines ...\",\n                \"url\": \"https://www.foxnews.com/\",\n                \"content\": \"### New vitamin compound shows promise for reversing Alzheimer's damage to the brain\\n\\nNew vitamin compound shows promise for reversing Alzheimer&apos;s damage to the brain - Fox News\\n\\n### Even small amounts of alcohol linked to higher dementia risk in older adults, study shows\\n\\nEven small amounts of alcohol linked to higher dementia risk in older adults, study shows - Fox News\\n\\n## Crime\\n\\nPolice release photo of suspect who abandoned baby with umbilical cord still attached - Fox News [...] ### Johnson accuses Democrats of prolonging government shutdown over being 'afraid' of far-left\\n\\n### CNN parent Warner Bros Discovery open to sale, says it has interest from multiple suitors\\n\\nWarner Bros. Discovery is open to a potential sale of its media assets. - Fox News\\n\\n### Flight makes emergency landing after cabin crew was 'knocking on the cockpit door' over communications issue [...] WASHINGTON, DC - OCTOBER 14: In this photo illustration, a Social Security card sits alongside checks from the U.S. Treasury on October 14, 2021 in Washington, DC. The Social Security Administration announced recipients will receive an annual cost of living adjustment of 5.9%, the largest increase since 1982. The larger increase is aimed at helping to offset rising inflation. (Photo illustration by Kevin Dietsch/Getty Images) - Fox News\\n\\n## Technology\",\n                \"score\": 0.3127377\n            },\n            {\n                \"title\": \"Yahoo News: Latest and Breaking News, Headlines, Live Updates ...\",\n                \"url\": \"https://news.yahoo.com/\",\n                \"content\": \"### A mysterious airstrip built on a Yemeni island comes as Houthi rebels are increasingly squeezed\\n\\nAdvertisement\\n\\n### 90% of Americans plan to skip the No. 1 piece of Social Security advice\\n\\n### San Angelo man dies after head-on crash\\n\\n### Supreme Court will consider whether people who regularly smoke pot can legally own guns\\n\\n### Woman shares head-slappingly simple tip that cut her utility bill in half: 'I was so shocked at the difference' [...] ## Common error appears to have caused Monday's massive internet outage\\n\\n## Atlanta police say they stopped a mass shooting at 1 of the world's busiest airports\\n\\n## Several states say SNAP benefits will pause on Nov. 1 if shutdown continues\\n\\n## For you\\n\\n### Man who sent 'So I raped you' message is sentenced to 2 to 4 years for 2013 campus assault\\n\\n### Chicago transit violent crime at 7 year high, funding concerns persist\\n\\n### Attack on house being treated as a hate crime [...] ### News\\n\\n### Life\\n\\n### Entertainment\\n\\n### Finance\\n\\n### Sports\\n\\n### New on Yahoo\\n\\n# Yahoo News\\n\\n## Top stories\\n\\n## Time is running out to save the royal jewels stolen from the Louvre\\n\\n## Construction crews begin tearing down part of the White House to build Trump's ballroom\\n\\n## Breakthrough eye implant lets patients with vision loss see and read again\\n\\n## He grew 25 tons of grapes. A winery said no — and told him to dump them.\",\n                \"score\": 0.2809028\n            },\n            {\n                \"title\": \"CBS News | Breaking news, top stories & today's latest headlines\",\n                \"url\": \"https://www.cbsnews.com/\",\n                \"content\": \"The government shutdown extends into Day 21 on Tuesday as Senate Republicans are set to have lunch with the president at the White House. Follow live updates here.\\n\\nVice President Vance Visits Israel \\n\\n#### In Israel, Vance and Kushner express optimism about Gaza ceasefire\\n\\nAs Trump's top envoys try to bolster the Gaza ceasefire, an insider questions both Netanyahu's and Hamas' commitment to peace.\\n\\nTOPSHOT-JAPAN-POLITICS [...] President Trump said last week that he and Russian President Vladimir Putin would meet in Budapest, Hungary, though he did not say when.\\n\\nLawmakers Continue Work On Capitol Hill As Shutdown Drags On \\n\\n#### Senate Republicans meet with Trump at White House on Day 21 of shutdown\\n\\nThe government shutdown extends into Day 21 on Tuesday as Senate Republicans are having lunch with the president at the White House. Follow live updates here.\",\n                \"score\": 0.23543385\n            },\n            {\n                \"title\": \"ABC News - Breaking News, Latest News and Videos\",\n                \"url\": \"https://abcnews.go.com/\",\n                \"content\": \"### What to know about COVID, flu, RSV shots including who is eligible, how to get them\\n\\n### Climate\\n\\n## One of the world's rarest whales that makes the Atlantic its home grows in population\\n\\n### Carbon cost of meat in US: This is how many greenhouse gas emissions are released\\n\\n### Climate and environment updates: 7 measures of Earth's health in danger, report says\\n\\n### Technology\\n\\n## Meta adds parental controls for AI-teen interactions\\n\\n### 'GMA' gets 1st look at new Xbox handheld devices [...] ## United plane makes emergency landing after mystery object strikes windshield midair\\n\\n## Cutting scary waste and ghoulish plastic out of Halloween\\n\\n## Men make a mission of showing the hilarity of old VHS tapes\\n\\n## Home invasion by Halloween-masked individuals caught on camera\\n\\n## Cargo plane skids off runway in Hong Kong\\n\\n### Politics\\n\\n## Government shutdown updates: DC food bank braces rise in demand\\n\\n## Biden rings the bell after completing course of radiation therapy for cancer [...] ## Comey's lawyers seek dismissal of charges based on prosecutors' 'flagrant misconduct'\\n\\n### Appeals court considers whether Alina Habba can continue as NJ's top prosecutor\\n\\n### Coast Guard launches ‘Operation River Wall’ on Rio Grande along southern border\\n\\n### Speaker Johnson continues to resist swearing in Democratic Rep.-elect Grijalva\\n\\n### Streets filled across the country for 'No Kings' peaceful rallies protesting Trump\\n\\n### Breast Cancer Awareness Month\",\n                \"score\": 0.23259805\n            }\n        ],\n        \"error\": null\n    },\n    \"clean\": {\n        \"summary\": \"Found 5 results for query.\",\n        \"snippet\": \"1. World | Latest News & Updates - BBC\\nhttps://www.bbc.com/news/world\\nThe Louvre Museum in Paris remains closed to the public after robbers stole imperial jewels in broad daylight on Sunday.\\n\\n## Latest updates\\n\\nPatrick Moynihan after breaching th Senate Chamber\\n\\n## Pardoned Capitol rioter arrested for allegedly threatening to kill top Democrat\\n\\nChristopher Moynihan, who had been sentenced to 21 months for the riot, allegedly said Hakeem Jeffries \\\"must be eliminated\\\"\\n\\n2. Fox News - Breaking News Updates | Latest News Headlines ...\\nhttps://www.foxnews.com/\\n### New vitamin compound shows promise for reversing Alzheimer's damage to the brain\\n\\nNew vitamin compound shows promise for reversing Alzheimer&apos;s damage to the brain - Fox News\\n\\n### Even small amounts of alcohol linked to higher dementia risk in older adults, study shows\\n\\nEven small amounts of alcohol linked to higher dementia risk in older adults, study shows - Fox News\\n\\n## Crime\\n\\nPolice re\\n\\n3. Yahoo News: Latest and Breaking News, Headlines, Live Updates ...\\nhttps://news.yahoo.com/\\n### A mysterious airstrip built on a Yemeni island comes as Houthi rebels are increasingly squeezed\\n\\nAdvertisement\\n\\n### 90% of Americans plan to skip the No. 1 piece of Social Security advice\\n\\n### San Angelo man dies after head-on crash\\n\\n### Supreme Court will consider whether people who regularly smoke pot can legally own guns\\n\\n### Woman shares head-slappingly simple tip that cut her utility bill\\n\\n4. CBS News | Breaking news, top stories & today's latest headlines\\nhttps://www.cbsnews.com/\\nThe government shutdown extends into Day 21 on Tuesday as Senate Republicans are set to have lunch with the president at the White House. Follow live updates here.\\n\\nVice President Vance Visits Israel \\n\\n#### In Israel, Vance and Kushner express optimism about Gaza ceasefire\\n\\nAs Trump's top envoys try to bolster the Gaza ceasefire, an insider questions both Netanyahu's and Hamas' commitment to peace\\n\\n5. ABC News - Breaking News, Latest News and Videos\\nhttps://abcnews.go.com/\\n### What to know about COVID, flu, RSV shots including who is eligible, how to get them\\n\\n### Climate\\n\\n## One of the world's rarest whales that makes the Atlantic its home grows in population\\n\\n### Carbon cost of meat in US: This is how many greenhouse gas emissions are released\\n\\n### Climate and environment updates: 7 measures of Earth's health in danger, report says\\n\\n### Technology\\n\\n## Meta adds pa\",\n        \"sources\": [\n            \"https://www.bbc.com/news/world\",\n            \"https://www.foxnews.com/\",\n            \"https://news.yahoo.com/\",\n            \"https://www.cbsnews.com/\",\n            \"https://abcnews.go.com/\"\n        ]\n    }\n}"
+				},
+				{
+					"name": "New Request",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/web_search?query=what happened in the louvre museum during the last two days?",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"web_search"
+							],
+							"query": [
+								{
+									"key": "query",
+									"value": "what happened in the louvre museum during the last two days?"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "date",
+							"value": "Tue, 21 Oct 2025 12:53:35 GMT"
+						},
+						{
+							"key": "server",
+							"value": "uvicorn"
+						},
+						{
+							"key": "content-length",
+							"value": "10338"
+						},
+						{
+							"key": "content-type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"tool\": \"web_search\",\n    \"query\": \"what happened in the louvre museum during the last two days?\",\n    \"raw\": {\n        \"results\": [\n            {\n                \"title\": \"France Reveals What Was Stolen From Louvre Museum - Art News\",\n                \"url\": \"https://www.artnews.com/art-news/news/what-was-stolen-louvre-crown-jewels-photos-1234757886/\",\n                \"content\": \"Information regarding the burglary that occurred on Sunday, October 19, at the Louvre Museum\\n\\nThis Sunday, October 19, the Louvre Museum experienced a break-in and theft in the Galerie d’Apollon, which houses the royal collection of gems and the French Crown Jewels. Two high-security display cases were targeted, and several items of inestimable heritage value were stolen, including: [...] No injuries were reported among the public or staff.\\n\\nThe Minister of Culture wishes to thank the Louvre’s staff for their responsiveness and great professionalism.\\n\\nShe also recalls that, as part of the “Louvre – New Renaissance” project announced by the President of the Republic last January, an ambitious new security plan is being implemented, including:\\n\\n Enhanced security measures with new-generation surveillance cameras;\\n Perimeter detection;\\n A new security command center. [...] Skip to main content \\n\\nARTnews\\n\\nSubscribe\\n\\nTO ART IN AMERICA\\n\\n# France’s Ministry of Culture Just Revealed Exactly What Thieves Stole From Louvre, Including a Crown With 3,000 Diamonds\\n\\nSeveral hours after news broke that thieves had broken into the Louvre Museum in Paris and stolen royal jewels of “incalculable” value, France’s Ministry of Culture sent out a press release officially detailing what was stolen in the robbery.\",\n                \"score\": 0.87166095\n            },\n            {\n                \"title\": \"Louvre Museum theft: Stolen jewels added to ... - Interpol\",\n                \"url\": \"https://www.interpol.int/en/News-and-Events/News/2025/Louvre-Museum-theft-Stolen-jewels-added-to-INTERPOL-s-Stolen-Works-of-Art-database\",\n                \"content\": \"en\\n\\n en\\n fr\\n es\\n ar\\n\\n## What are you searching for ?\\n\\n# Louvre Museum theft: Stolen jewels added to INTERPOL's Stolen Works of Art database\\n\\n21 October 2025\\n\\nHome   News and Events   News  2025  Louvre Museum theft: Stolen jewels added to INTERPOL's Stolen Works of Art database\\n\\nEight items remain missing following brazen theft\\n\\nLYON, France – On Sunday, 19 October 2025, at 09:30, thieves broke into the Louvre Museum in Paris and stole nine items of priceless jewellry. [...] Four suspects entered the museum’s Galerie d'Apollon (Gallery of Apollo) using a mechanical ladder mounted on a vehicle. They cut through the display cases and fled with the culturally significant items, which date back to France's 19th-century royalty and are encrusted with thousands of diamonds and other precious gemstones.\\n\\nA crown once belonging to Empress Eugenie of France was recovered from the scene, seemingly dropped by the intruders. Eight other items remain missing.\",\n                \"score\": 0.7813477\n            },\n            {\n                \"title\": \"Manhunt underway for 4 suspects after heist of 'priceless' jewelry at ...\",\n                \"url\": \"https://abcnews.go.com/International/manhunt-underway-4-suspects-after-brazen-heist-louvre/story?id=126672414\",\n                \"content\": \"As the investigation to identify the culprits continued, a crisis meeting took place at the Interior Ministry that included Dati as well with the Banditry Repression Brigade (BRB), the special police unit of the Ministry of Interior that investigates major art thefts, authorities said.\\n\\nThe Louvre remained closed for a second day on Monday and the museum is refunding tickets that have already already purchased by visitors.\\n\\n## 7 minutes, in and out, authorities say [...] PARIS -- As the alarms sounded at the Louvre Museum on Sunday morning, four suspects took off on two motorbikes, winding their way through central Paris, allegedly carrying with them a haul of \\\"priceless\\\" jewelry once worn by queens and royals.\\n\\nThe suspects were last seen speeding southeast on Highway A6 out of Paris and in the direction of Lyon, according to investigators. [...] French President Emmanuel Macron and other French officials vowed that the pieces would be returned and the suspects apprehended. The museum closed on Sunday morning as police swarmed the area in search of suspects and evidence.\\n\\n\\\"The theft committed at the Louvre is an attack on a heritage that we cherish because it is our history,\\\" President Emmanuel Macron said on social media on Sunday.\",\n                \"score\": 0.77055156\n            },\n            {\n                \"title\": \"Louvre closes after thieves steal 'priceless' jewels in daytime heist\",\n                \"url\": \"https://www.lemonde.fr/en/france/article/2025/10/19/louvre-closed-for-the-day-after-a-robbery-according-to-culture-minister_6746572_7.html\",\n                \"content\": \"France's Culture Minister Rachida Dati reported on Sunday, October 19, that a robbery had taken place at the Louvre in Paris, as the world-renowned museum said it was closing for the day. \\\"A hold-up took place this morning at the opening of the Louvre Museum,\\\" she wrote on X. \\\"No injuries reported. I'm on site with museum staff and police.\\\" [...] The Louvre, which welcomed nearly nine million visitors in 2024, 80% of whom were foreigners, announced on social media that it would remain \\\"closed\\\" on Sunday \\\"for exceptional reasons.\\\"\\n\\nAccording to a source close to the investigation cited by Agence France-Presse (AFP), between 9:30 and 9:40 am, thieves reportedly arrived on scooters and used a freight elevator to access the room they were targeting. They were reportedly equipped with small chainsaws, according to a police source.\",\n                \"score\": 0.75027883\n            },\n            {\n                \"title\": \"2025 Louvre robbery - Wikipedia\",\n                \"url\": \"https://en.wikipedia.org/wiki/2025_Louvre_robbery\",\n                \"content\": \"On 19 October 2025, thieves disguised as workers stole eight pieces of the French Crown Jewels from the Galerie d'Apollon of the Louvre in Paris, France. The robbery took four minutes and happened during regular opening hours.( It was the first art theft from the Louvre since the 1998 theft of the painting _Le chemin de Sèvres_.(\\n\\nBackground\\n\\n[edit] [...] 30.   ^Lapham, Jake, ed. (19 October 2025). \\\"Thieves steal jewels of 'incalculable' value in seven-minute heist at Louvre museum in Paris\\\". BBC News. Archived from the original on 2025-10-19. Retrieved 2025-10-19.\\n31.   ^\\\"Thieves pull off daring daylight heist, stealing priceless jewels from Paris's Louvre Museum\\\". _News.Az_. 19 October 2025. Retrieved 2025-10-19. [...] 1.   ^ Jump up to: _a__b__c_Adamson, Thomas (19 October 2025). \\\"Thieves strike Louvre in brazen jewel heist as the world's most visited museum shuts\\\". _AP News_. Retrieved 2025-10-19.\\n2.   ^\\\"Louvre closed for the day after robbery of 'priceless' jewelry\\\". _Le Monde_. 19 October 2025. Retrieved 2025-10-19.\\n3.   ^Schofield, Hugh (19 October 2025). \\\"How common are thefts from the Louvre?\\\". _BBC News_. Retrieved 2025-10-19.\",\n                \"score\": 0.74273956\n            }\n        ],\n        \"error\": null\n    },\n    \"clean\": {\n        \"summary\": \"Found 5 results for query.\",\n        \"snippet\": \"1. France Reveals What Was Stolen From Louvre Museum - Art News\\nhttps://www.artnews.com/art-news/news/what-was-stolen-louvre-crown-jewels-photos-1234757886/\\nInformation regarding the burglary that occurred on Sunday, October 19, at the Louvre Museum\\n\\nThis Sunday, October 19, the Louvre Museum experienced a break-in and theft in the Galerie d’Apollon, which houses the royal collection of gems and the French Crown Jewels. Two high-security display cases were targeted, and several items of inestimable heritage value were stolen, including: [...] No injur\\n\\n2. Louvre Museum theft: Stolen jewels added to ... - Interpol\\nhttps://www.interpol.int/en/News-and-Events/News/2025/Louvre-Museum-theft-Stolen-jewels-added-to-INTERPOL-s-Stolen-Works-of-Art-database\\nen\\n\\n en\\n fr\\n es\\n ar\\n\\n## What are you searching for ?\\n\\n# Louvre Museum theft: Stolen jewels added to INTERPOL's Stolen Works of Art database\\n\\n21 October 2025\\n\\nHome   News and Events   News  2025  Louvre Museum theft: Stolen jewels added to INTERPOL's Stolen Works of Art database\\n\\nEight items remain missing following brazen theft\\n\\nLYON, France – On Sunday, 19 October 2025, at 09:30, thieves broke in\\n\\n3. Manhunt underway for 4 suspects after heist of 'priceless' jewelry at ...\\nhttps://abcnews.go.com/International/manhunt-underway-4-suspects-after-brazen-heist-louvre/story?id=126672414\\nAs the investigation to identify the culprits continued, a crisis meeting took place at the Interior Ministry that included Dati as well with the Banditry Repression Brigade (BRB), the special police unit of the Ministry of Interior that investigates major art thefts, authorities said.\\n\\nThe Louvre remained closed for a second day on Monday and the museum is refunding tickets that have already alre\\n\\n4. Louvre closes after thieves steal 'priceless' jewels in daytime heist\\nhttps://www.lemonde.fr/en/france/article/2025/10/19/louvre-closed-for-the-day-after-a-robbery-according-to-culture-minister_6746572_7.html\\nFrance's Culture Minister Rachida Dati reported on Sunday, October 19, that a robbery had taken place at the Louvre in Paris, as the world-renowned museum said it was closing for the day. \\\"A hold-up took place this morning at the opening of the Louvre Museum,\\\" she wrote on X. \\\"No injuries reported. I'm on site with museum staff and police.\\\" [...] The Louvre, which welcomed nearly nine million visi\\n\\n5. 2025 Louvre robbery - Wikipedia\\nhttps://en.wikipedia.org/wiki/2025_Louvre_robbery\\nOn 19 October 2025, thieves disguised as workers stole eight pieces of the French Crown Jewels from the Galerie d'Apollon of the Louvre in Paris, France. The robbery took four minutes and happened during regular opening hours.( It was the first art theft from the Louvre since the 1998 theft of the painting _Le chemin de Sèvres_.(\\n\\nBackground\\n\\n[edit] [...] 30.   ^Lapham, Jake, ed. (19 October 2025)\",\n        \"sources\": [\n            \"https://www.artnews.com/art-news/news/what-was-stolen-louvre-crown-jewels-photos-1234757886/\",\n            \"https://www.interpol.int/en/News-and-Events/News/2025/Louvre-Museum-theft-Stolen-jewels-added-to-INTERPOL-s-Stolen-Works-of-Art-database\",\n            \"https://abcnews.go.com/International/manhunt-underway-4-suspects-after-brazen-heist-louvre/story?id=126672414\",\n            \"https://www.lemonde.fr/en/france/article/2025/10/19/louvre-closed-for-the-day-after-a-robbery-according-to-culture-minister_6746572_7.html\",\n            \"https://en.wikipedia.org/wiki/2025_Louvre_robbery\"\n        ]\n    }\n}"
+				},
+				{
+					"name": "web_search",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/web_search?query=what happened at the louvre",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"web_search"
+							],
+							"query": [
+								{
+									"key": "query",
+									"value": "what happened at the louvre"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "",
+					"header": [
+						{
+							"key": "date",
+							"value": "Tue, 21 Oct 2025 14:47:03 GMT"
+						},
+						{
+							"key": "server",
+							"value": "uvicorn"
+						},
+						{
+							"key": "content-length",
+							"value": "10705"
+						},
+						{
+							"key": "content-type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"tool\": \"web_search\",\n    \"query\": \"what happened at the louvre\",\n    \"raw\": {\n        \"results\": [\n            {\n                \"title\": \"History of the Louvre Museum: 5 Key Events\",\n                \"url\": \"https://myprivateparis.com/5-key-dates-in-the-history-of-the-louvre/\",\n                \"content\": \"On August 25, 1939, just days before the outbreak of World War II, the Louvre decided to evacuate its artworks to safe locations across France. Museum staff, led by director Jacques Jaujard and curator Rose Valland, orchestrated a daring operation to safeguard thousands of artworks from the looming threat of war and potential Nazi occupation. This initial evacuation marked the beginning of a concerted effort to protect France’s cultural heritage throughout the duration of the conflict. [...] In May of 1871 during the Paris Commune, the Tuileries Palace (adjacent to the Louvre) was set on fire. The fire raged for two whole days destroying much of the palace’s interior, including priceless artworks and furnishings.\\n\\n## August 25, 1939: World War II – The Evacuation of the artworks [...] On this historic day, the Louvre opened its doors as a public museum. During the French Revolution, the government repurposed the former royal palace, the Louvre, to showcase France’s artistic treasures. The inaugural display featured over 500 paintings, including masterpieces by renowned artists such as Leonardo da Vinci, Raphael, and Rembrandt.\\n\\n## August 21, 1911: The Theft of the Mona Lisa\",\n                \"score\": 0.79901963\n            },\n            {\n                \"title\": \"Louvre remains closed a day after daring theft of Napoleonic jewels\",\n                \"url\": \"https://apnews.com/article/louvre-closed-jewel-heist-2cc473fc178ae6a3513daa0c71b43409\",\n                \"content\": \"On Sunday, thieves rode a basket lift up the Louvre’s facade, forced a window, smashed display cases and fled with priceless Napoleonic jewels, officials said. The theft occurred about 30 minutes after the museum opened, with visitors already inside, and was among the highest-profile museum thefts in living memory.\\n\\nIt unfolded just 250 meters (270 yards) from the Mona Lisa, in what Culture Minister Rachida Dati described as a professional operation that lasted just a few minutes. [...] Updated [hour]:[minute] [AMPM] [timezone], [monthFull] [day], [year]\\n\\nLeer en español\\n\\nShare\\n\\n Facebook\\n Copy\\n\\n  Link copied\\n Print)\\n Email\\n X\\n LinkedIn\\n Bluesky\\n Flipboard\\n Pinterest\\n Reddit\\n\\nPARIS (AP) — The Louvre remained closed Monday, a day after historic jewels were stolen from the world’s most-visited museum in a daring daylight heist that prompted authorities to reassess security measures at cultural sites across France. [...] In a minutes-long strike inside the world’s most-visited museum, thieves rode a basket lift up the Louvre’s facade, forced a window, smashed display cases and fled with priceless Napoleonic jewels. Here’s what to know.\\n\\nFrench Justice Minister Gerald Darmanin acknowledged security failures on Monday.\",\n                \"score\": 0.79675186\n            },\n            {\n                \"title\": \"Louvre Museum theft: Stolen jewels added to ... - Interpol\",\n                \"url\": \"https://www.interpol.int/en/News-and-Events/News/2025/Louvre-Museum-theft-Stolen-jewels-added-to-INTERPOL-s-Stolen-Works-of-Art-database\",\n                \"content\": \"LYON, France – On Sunday, 19 October 2025, at 09:30, thieves broke into the Louvre Museum in Paris and stole nine items of priceless jewellry.\\n\\nFour suspects entered the museum’s Galerie d'Apollon (Gallery of Apollo) using a mechanical ladder mounted on a vehicle. They cut through the display cases and fled with the culturally significant items, which date back to France's 19th-century royalty and are encrusted with thousands of diamonds and other precious gemstones. [...] A crown once belonging to Empress Eugenie of France was recovered from the scene, seemingly dropped by the intruders. Eight other items remain missing.\\n\\nImage 11: WOA_Theft at the Louvre Museum_Poster.jpg\\n\\nThe stolen jewels have been added to INTERPOL’s Stolen Works of Art database, which combines descriptions and pictures of more than 57,000 items from around the world. It is the only database at the international level with certified police information on stolen and missing objects of art. [...] What are you searching for ?\\n\\nLouvre Museum theft: Stolen jewels added to INTERPOL's Stolen Works of Art database\\n\\n21 October 2025\\n\\nHome\\n\\nImage 3: >\\n\\nNews and Events\\n\\nImage 4: >\\n\\n News \\n\\nImage 5: >\\n\\n 2025 \\n\\nImage 6: >\\n\\n Louvre Museum theft: Stolen jewels added to INTERPOL's Stolen Works of Art database \\n\\nImage 7: Print this page;)Image 8: Facebook INTERPOLImage 9: X INTERPOLImage 10: Scroll to top;)\\n\\n Eight items remain missing following brazen theft\",\n                \"score\": 0.7797419\n            },\n            {\n                \"title\": \"Museum heists have changed. Why the Louvre robbery is a worrying ...\",\n                \"url\": \"https://www.cnn.com/2025/10/20/style/france-louvre-heist-worrying-escalation-intl-hnk\",\n                \"content\": \"Police were met with several pieces of evidence when they arrived at the Louvre. Discarded by the truck were two grinders, a blowtorch, gasoline, gloves, a walkie-talkie, and a blanket. Laying nearby was a more eye-catching item, the crown of Empress Eugénie, the wife of Napoleon III, dropped by the thieves as they made their escape on Yamaha T-Max scooters along the Seine river.\\n\\nThe ornate gold piece, which features 1,354 diamonds and 56 emeralds, was damaged in the heist, prosecutors said. [...] Paris’ Louvre Museum had already been open for 30 minutes, and welcomed hundreds of visitors through its doors, when thieves in yellow vests scaled a truck-mounted ladder to the second-floor balcony of the Apollo Gallery, home to the French crown jewels, among other treasures.\\n\\nUsing an angle grinder to force open a window, they took just four minutes to enter the room, cut open two cases displaying Napoleonic jewels, grab nine pieces and flee back down the ladder. [...] Image 2: Police stand guard outside the Louvre museum at Louvre on October 19, 2025 in Paris, France.\\n\\nPolice stand guard outside the Louvre museum at Louvre on October 19, 2025 in Paris, France.\\n\\nRemon Haazen/Getty Images\\n\\nCrime Visual arts\\n\\nSee all topics\\n\\nFacebook TweetEmailLink\\n\\n Link Copied!\",\n                \"score\": 0.7447496\n            },\n            {\n                \"title\": \"Louvre Robbery Raises Questions About Security\",\n                \"url\": \"https://www.nytimes.com/2025/10/21/world/europe/louvre-robbery-security-paris.html\",\n                \"content\": \"To anyone strolling along the banks of the Seine, just across the road, it might not have been immediately apparent that the setup was a ruse and that a daring robbery was underway. Workers are a common sight around the Louvre, an ancient, sprawling former palace, whose basic upkeep and renovations make it a constantly transforming construction site. [...] The four thieves arrived on the south side of the Louvre on Sunday morning at 9:30 and pulled a truck up on the sidewalk, right next to the museum walls. They posed as workers, wearing yellow vests and setting out traffic cones. [...] But inside the museum, where visitors were already snaking their way through more than eight miles of exhibition space, the drama that was unfolding would soon become clear. Two of the thieves used an electric ladder attached to their truck to reach the Apollo Gallery, with its treasury of priceless crown jewels, then used power tools to break through a window.\\n\\nSubscribe to The Times to read as many articles as you like.\",\n                \"score\": 0.6889923\n            }\n        ],\n        \"error\": null\n    },\n    \"clean\": {\n        \"summary\": \"Found 5 results for query.\",\n        \"snippet\": \"1. History of the Louvre Museum: 5 Key Events\\nhttps://myprivateparis.com/5-key-dates-in-the-history-of-the-louvre/\\nOn August 25, 1939, just days before the outbreak of World War II, the Louvre decided to evacuate its artworks to safe locations across France. Museum staff, led by director Jacques Jaujard and curator Rose Valland, orchestrated a daring operation to safeguard thousands of artworks from the looming threat of war and potential Nazi occupation. This initial evacuation marked the beginning of a conce\\n\\n2. Louvre remains closed a day after daring theft of Napoleonic jewels\\nhttps://apnews.com/article/louvre-closed-jewel-heist-2cc473fc178ae6a3513daa0c71b43409\\nOn Sunday, thieves rode a basket lift up the Louvre’s facade, forced a window, smashed display cases and fled with priceless Napoleonic jewels, officials said. The theft occurred about 30 minutes after the museum opened, with visitors already inside, and was among the highest-profile museum thefts in living memory.\\n\\nIt unfolded just 250 meters (270 yards) from the Mona Lisa, in what Culture Minist\\n\\n3. Louvre Museum theft: Stolen jewels added to ... - Interpol\\nhttps://www.interpol.int/en/News-and-Events/News/2025/Louvre-Museum-theft-Stolen-jewels-added-to-INTERPOL-s-Stolen-Works-of-Art-database\\nLYON, France – On Sunday, 19 October 2025, at 09:30, thieves broke into the Louvre Museum in Paris and stole nine items of priceless jewellry.\\n\\nFour suspects entered the museum’s Galerie d'Apollon (Gallery of Apollo) using a mechanical ladder mounted on a vehicle. They cut through the display cases and fled with the culturally significant items, which date back to France's 19th-century royalty and\\n\\n4. Museum heists have changed. Why the Louvre robbery is a worrying ...\\nhttps://www.cnn.com/2025/10/20/style/france-louvre-heist-worrying-escalation-intl-hnk\\nPolice were met with several pieces of evidence when they arrived at the Louvre. Discarded by the truck were two grinders, a blowtorch, gasoline, gloves, a walkie-talkie, and a blanket. Laying nearby was a more eye-catching item, the crown of Empress Eugénie, the wife of Napoleon III, dropped by the thieves as they made their escape on Yamaha T-Max scooters along the Seine river.\\n\\nThe ornate gold \\n\\n5. Louvre Robbery Raises Questions About Security\\nhttps://www.nytimes.com/2025/10/21/world/europe/louvre-robbery-security-paris.html\\nTo anyone strolling along the banks of the Seine, just across the road, it might not have been immediately apparent that the setup was a ruse and that a daring robbery was underway. Workers are a common sight around the Louvre, an ancient, sprawling former palace, whose basic upkeep and renovations make it a constantly transforming construction site. [...] The four thieves arrived on the south sid\",\n        \"sources\": [\n            \"https://myprivateparis.com/5-key-dates-in-the-history-of-the-louvre/\",\n            \"https://apnews.com/article/louvre-closed-jewel-heist-2cc473fc178ae6a3513daa0c71b43409\",\n            \"https://www.interpol.int/en/News-and-Events/News/2025/Louvre-Museum-theft-Stolen-jewels-added-to-INTERPOL-s-Stolen-Works-of-Art-database\",\n            \"https://www.cnn.com/2025/10/20/style/france-louvre-heist-worrying-escalation-intl-hnk\",\n            \"https://www.nytimes.com/2025/10/21/world/europe/louvre-robbery-security-paris.html\"\n        ]\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "agent",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": [
+				{
+					"name": "New Request",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"query\":\"what happened at the louvre?\"}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/agent",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"agent"
+							],
+							"query": [
+								{
+									"key": "query",
+									"value": "what ",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "",
+					"header": [
+						{
+							"key": "date",
+							"value": "Tue, 21 Oct 2025 14:54:31 GMT"
+						},
+						{
+							"key": "server",
+							"value": "uvicorn"
+						},
+						{
+							"key": "content-length",
+							"value": "3092"
+						},
+						{
+							"key": "content-type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"query\": \"what happened at the louvre?\",\n    \"context_judge_result\": \"context_missing\",\n    \"agent_response\": {\n        \"tool_used\": \"web_search\",\n        \"summary\": \"Based on the latest web search results, here's a summary.\",\n        \"results\": \"1. Hunt continues for thieves after priceless jewels stolen in heist ... - BBC\\nhttps://www.bbc.com/news/live/c62lnennzgdt\\nThe world-famous Louvre museum in Paris is closed after a robbery, France's Culture Minister Rachida Dati says\\n\\n   The incident happened as the museum opened this morning, according to the minister\\n\\n   The minister gave no information as to what may have been stolen\\n\\n   No injuries are reported and police are investigating at the site, she adds\\n\\n   The Louvre says on social media it will be closed\\n\\n2. How 7 minutes at the Louvre stunned France - NBC News\\nhttps://www.nbcnews.com/world/europe/paris-louvre-museum-heist-thieves-took-7-minutes-steal-crown-jewels-rcna238596\\nPARIS — The heist cut through hushed corridors with a speed and ease that humiliated a nation. Authorities are now racing against their own clock.\\n\\nIn the space of just seven minutes in the casual daylight of Sunday morning, four suspects stole nine pieces of France’s crown jewels from the Louvre. They robbed not just the most visited museum in the world, but also the French people themselves, the\\n\\n3. Louvre Museum theft: Stolen jewels added to ... - Interpol\\nhttps://www.interpol.int/en/News-and-Events/News/2025/Louvre-Museum-theft-Stolen-jewels-added-to-INTERPOL-s-Stolen-Works-of-Art-database\\nLYON, France – On Sunday, 19 October 2025, at 09:30, thieves broke into the Louvre Museum in Paris and stole nine items of priceless jewellry.\\n\\nFour suspects entered the museum’s Galerie d'Apollon (Gallery of Apollo) using a mechanical ladder mounted on a vehicle. They cut through the display cases and fled with the culturally significant items, which date back to France's 19th-century royalty and\\n\\n4. Louvre Museum robbery: How thieves pulled off daring daytime ...\\nhttps://www.yahoo.com/news/world/article/louvre-museum-robbery-how-thieves-pulled-off-daring-daytime-heist-of-french-crown-jewels-in-7-minutes-163641931.html\\nFrench authorities are continuing to investigate a shocking daytime robbery at the Louvre in Paris, where officials say four thieves used a truck-mounted basket lift and power tools to make off with priceless crown jewels from the world’s most-visited museum on Sunday.\\n\\nThe brazen heist was carried out in less than eight minutes, officials said. [...] The robbery occurred on Sunday around 9:30 a.m\\n\\n5. Everything we know about the Louvre jewellery heist - BBC\\nhttps://www.bbc.com/news/articles/cg7nrlkg0zxo\\n1 day ago Image 19Image 20: Split screen of a ladder and Andrew Harding 'An embarrassment': BBC reports at the scene of Louvre robbery -------------------------------------------------------------- The Louvre Museum was shut after priceless jewels were stolen in a heist. 1 day ago [...] \\\"We are all disappointed and angry,\\\" she said, and it is \\\"difficult to understand how it happened so easily.\\\"\\n\\nG\"\n    }\n}"
+				},
+				{
+					"name": "New Request",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"query\":\"what is the updates on the egyptian gold market during the latest 6 months? use websearch.\"}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/agent",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"agent"
+							],
+							"query": [
+								{
+									"key": "query",
+									"value": "what ",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "",
+					"header": [
+						{
+							"key": "date",
+							"value": "Tue, 21 Oct 2025 14:56:30 GMT"
+						},
+						{
+							"key": "server",
+							"value": "uvicorn"
+						},
+						{
+							"key": "content-length",
+							"value": "2964"
+						},
+						{
+							"key": "content-type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"query\": \"what is the updates on the egyptian gold market during the latest 6 months? use websearch.\",\n    \"context_judge_result\": \"context_missing\",\n    \"agent_response\": {\n        \"tool_used\": \"web_search\",\n        \"summary\": \"Based on the latest web search results, here's a summary.\",\n        \"results\": \"1. Last 6 Months Gold Prices in Egypt (24K, 22K, 18K, 14K, 10K)\\nhttps://goldpricez.com/gold/history/egp/months-6\\n| 05-Oct-2025 | 5944 EGP |\\n| 04-Oct-2025 | 5961.9 EGP |\\n| 03-Oct-2025 | 5961.9 EGP |\\n| 02-Oct-2025 | 5911.4 EGP |\\n| 01-Oct-2025 | 5943.9 EGP |\\n| 30-Sep-2025 | 5926.9 EGP |\\n| 29-Sep-2025 | 5913.2 EGP |\\n| 28-Sep-2025 | 5813.5 EGP |\\n| 27-Sep-2025 | 5814.1 EGP |\\n| 26-Sep-2025 | 5814.1 EGP |\\n| 25-Sep-2025 | 5792.5 EGP |\\n| 24-Sep-2025 | 5776.8 EGP |\\n| 23-Sep-2025 | 5819.1 EGP |\\n| 22-Sep-2025 | 5796.5 EG\\n\\n2. Gold Price History in Egyptian Pounds (EGP) for June 2025\\nhttps://www.bullion-rates.com/gold/EGP/2025-6-history.htm\\n| 06/19/25 | 170,770 | 5,490.39 |\\n| 06/20/25 | 170,442 | 5,479.85 |\\n| 06/23/25 | 170,775 | 5,490.55 |\\n| 06/24/25 | 166,440 | 5,351.19 |\\n| 06/25/25 | 166,256 | 5,345.26 |\\n| 06/26/25 | 166,080 | 5,339.58 |\\n| 06/27/25 | 163,272 | 5,249.31 |\\n| 06/30/25 | 163,851 | 5,267.93 | [...] ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  --\\n\\n3. As gold prices soar Egypt's brides settle for fake bling, silver\\nhttps://www.newarab.com/news/gold-prices-soar-egypts-brides-settle-fake-bling-silver?amp\\nThe price of 21-karat gold, the most traded variety in this country, rose from EGP3,720 (around $78) per gram in January to over EGP4,690 (around $100) by April, and over EGP5,700 (around $120) a few days ago. The price of 24-karat gold hit EGP5,354 in September and is now at EGP6,500.\\n\\nGlobally, gold exceeded $4,000 per ounce this month, propelled by growing fears and uncertainties regarding the \\n\\n4. Gold prices hold steady in Egypt despite stronger EGP: Metals Division\\nhttps://www.dailynewsegypt.com/2025/10/12/gold-prices-hold-steady-in-egypt-despite-stronger-egp-metals-division/\\nAccording to the division’s weekly report, 21-karat gold in Egypt hit an all-time high of EGP 5,460 per gram during the past week—up 2.39% from EGP 5,230 at the week’s open, before closing at EGP 5,355 per gram. Wassef described this as a reflection of the continued positive momentum in the market, driven more by international than domestic factors. [...] # Gold prices hold steady in Egypt despite\\n\\n5. Gold Price Egypt\\nhttps://goldprice.org/gold-price-egypt.html\\nthe same time also eliminated foreign exchange controls. [...] If you are looking to buy gold in Egypt, you will probably see prices quoted by the ounce gram or kilo in the local currency, the Egyptian Pound. Prices may also be listed in other key currencies such as U.S. Dollars, Great British Pounds, euros or yen. [...] The current price per unit of weight and currency will be displayed on the ri\"\n    }\n}"
+				},
+				{
+					"name": "New Request",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"query\":\"what is the updates on the egyptian gold market during the latest 6 months? use websearch.\"}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/agent",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"agent"
+							],
+							"query": [
+								{
+									"key": "query",
+									"value": "what ",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "",
+					"header": [
+						{
+							"key": "date",
+							"value": "Tue, 21 Oct 2025 15:02:57 GMT"
+						},
+						{
+							"key": "server",
+							"value": "uvicorn"
+						},
+						{
+							"key": "content-length",
+							"value": "4146"
+						},
+						{
+							"key": "content-type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"query\": \"what is the updates on the egyptian gold market during the latest 6 months? use websearch.\",\n    \"context_judge_result\": \"context_missing\",\n    \"agent_response\": {\n        \"tool_used\": \"web_search\",\n        \"summary\": \"Here is a summary of the recent web search results on the Egyptian gold market in 6 months, focusing on key facts, dates, and outcomes:\\n\\n* Gold prices in Egypt have fluctuated over the past 6 months. In October 2025, prices ranged from EGP3,720 per gram (Jan) to EGP4,690 per gram (Apr), and then rose again to EGP5,700 per gram by November. However, prices stabilized at EGP5,460 per gram in September.\\n* The Egyptian pound's gold price is affected by global market trends. In October 2025, the gold price exceeded $4,000 per ounce due to growing fears and uncertainties regarding international factors.\\n* Despite the rise in gold prices, domestic factors have contributed to stability in Egypt's gold market. Foreign exchange controls were eliminated, reducing the impact of foreign currencies on local prices.\\n* The current gold price in Egyptian pounds is displayed by weight and currency (e.g., EGP3,460 per gram). Prices may also be listed in other key currencies such as US dollars, Great British pounds, euros, or yen.\\n\\nOverall, the recent web search results indicate that gold prices in Egypt have increased over the past 6 months, driven by both domestic and international factors.\",\n        \"results\": \"1. Last 6 Months Gold Prices in Egypt (24K, 22K, 18K, 14K, 10K)\\nhttps://goldpricez.com/gold/history/egp/months-6\\n| 06-Oct-2025 | 6051.2 EGP |\\n| 05-Oct-2025 | 5944 EGP |\\n| 04-Oct-2025 | 5961.9 EGP |\\n| 03-Oct-2025 | 5961.9 EGP |\\n| 02-Oct-2025 | 5911.4 EGP |\\n| 01-Oct-2025 | 5943.9 EGP |\\n| 30-Sep-2025 | 5926.9 EGP |\\n| 29-Sep-2025 | 5913.2 EGP |\\n| 28-Sep-2025 | 5813.5 EGP |\\n| 27-Sep-2025 | 5814.1 EGP |\\n| 26-Sep-2025 | 5814.1 EGP |\\n| 25-Sep-2025 | 5792.5 EGP |\\n| 24-Sep-2025 | 5776.8 EGP |\\n| 23-Sep-2025 | 5819.1 EG\\n\\n2. As gold prices soar Egypt's brides settle for fake bling, silver\\nhttps://www.newarab.com/news/gold-prices-soar-egypts-brides-settle-fake-bling-silver?amp\\nThe price of 21-karat gold, the most traded variety in this country, rose from EGP3,720 (around $78) per gram in January to over EGP4,690 (around $100) by April, and over EGP5,700 (around $120) a few days ago. The price of 24-karat gold hit EGP5,354 in September and is now at EGP6,500.\\n\\nGlobally, gold exceeded $4,000 per ounce this month, propelled by growing fears and uncertainties regarding the \\n\\n3. Gold prices hold steady in Egypt despite stronger EGP: Metals Division\\nhttps://www.dailynewsegypt.com/2025/10/12/gold-prices-hold-steady-in-egypt-despite-stronger-egp-metals-division/\\nAccording to the division’s weekly report, 21-karat gold in Egypt hit an all-time high of EGP 5,460 per gram during the past week—up 2.39% from EGP 5,230 at the week’s open, before closing at EGP 5,355 per gram. Wassef described this as a reflection of the continued positive momentum in the market, driven more by international than domestic factors. [...] # Gold prices hold steady in Egypt despite\\n\\n4. Gold Price Egypt\\nhttps://goldprice.org/gold-price-egypt.html\\nthe same time also eliminated foreign exchange controls. [...] If you are looking to buy gold in Egypt, you will probably see prices quoted by the ounce gram or kilo in the local currency, the Egyptian Pound. Prices may also be listed in other key currencies such as U.S. Dollars, Great British Pounds, euros or yen. [...] The current price per unit of weight and currency will be displayed on the ri\\n\\n5. 1 Year Gold Price History in Egyptian Pounds per Gram\\nhttps://goldprice.org/gold-price-charts/1-year-gold-price-history-in-egyptian-pounds-per-gram\\nBuy Gold & Silver At Spot\\n\\n## 1 Year Gold Price History in Egyptian Pounds per Gram\\n\\n1 Year Gold Price History in  Egyptian Pounds per Gram  \\n1 Year Gold Price History in Egyptian Pounds per Gram\\n\\nReceive Gold and Silver Price Updates via Email\\n\\nApple App Store\\nGoogle Play Store\\n\\nGold Price Group\\n\\nContact Us from the form\\n\\nprivacyicon [...] The current price per unit of weight and currency will be\"\n    }\n}"
+				},
+				{
+					"name": "New Request",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"query\":\"what happened at the louvre?\"}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/agent",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"agent"
+							],
+							"query": [
+								{
+									"key": "query",
+									"value": "what ",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "",
+					"header": [
+						{
+							"key": "date",
+							"value": "Tue, 21 Oct 2025 15:05:16 GMT"
+						},
+						{
+							"key": "server",
+							"value": "uvicorn"
+						},
+						{
+							"key": "content-length",
+							"value": "3837"
+						},
+						{
+							"key": "content-type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"query\": \"what happened at the louvre?\",\n    \"context_judge_result\": \"context_missing\",\n    \"agent_response\": {\n        \"tool_used\": \"web_search\",\n        \"summary\": \"Here is a concise and objective summary of the key facts from the recent web search results:\\n\\nOn October 19, 2025, thieves stole nine pieces of France's crown jewels from the Louvre Museum in Paris. The heist occurred during daylight hours when the museum was open to visitors. Four suspects used a mechanical ladder mounted on a vehicle and power tools to cut through display cases and escape with the stolen items. The stolen jewels include culturally significant pieces dated back to France's 19th-century royalty. Authorities are investigating and trying to determine how the heist occurred so quickly, with four thieves reportedly making off with the treasures in less than eight minutes. The incident has caused widespread shock and disappointment among French authorities and the public alike.\",\n        \"results\": \"1. Hunt continues for thieves after priceless jewels stolen in heist ... - BBC\\nhttps://www.bbc.com/news/live/c62lnennzgdt\\nThe world-famous Louvre museum in Paris is closed after a robbery, France's Culture Minister Rachida Dati says\\n\\n   The incident happened as the museum opened this morning, according to the minister\\n\\n   The minister gave no information as to what may have been stolen\\n\\n   No injuries are reported and police are investigating at the site, she adds\\n\\n   The Louvre says on social media it will be closed\\n\\n2. How 7 minutes at the Louvre stunned France - NBC News\\nhttps://www.nbcnews.com/world/europe/paris-louvre-museum-heist-thieves-took-7-minutes-steal-crown-jewels-rcna238596\\nPARIS — The heist cut through hushed corridors with a speed and ease that humiliated a nation. Authorities are now racing against their own clock.\\n\\nIn the space of just seven minutes in the casual daylight of Sunday morning, four suspects stole nine pieces of France’s crown jewels from the Louvre. They robbed not just the most visited museum in the world, but also the French people themselves, the\\n\\n3. Louvre Museum theft: Stolen jewels added to ... - Interpol\\nhttps://www.interpol.int/en/News-and-Events/News/2025/Louvre-Museum-theft-Stolen-jewels-added-to-INTERPOL-s-Stolen-Works-of-Art-database\\nLYON, France – On Sunday, 19 October 2025, at 09:30, thieves broke into the Louvre Museum in Paris and stole nine items of priceless jewellry.\\n\\nFour suspects entered the museum’s Galerie d'Apollon (Gallery of Apollo) using a mechanical ladder mounted on a vehicle. They cut through the display cases and fled with the culturally significant items, which date back to France's 19th-century royalty and\\n\\n4. Louvre Museum robbery: How thieves pulled off daring daytime ...\\nhttps://www.yahoo.com/news/world/article/louvre-museum-robbery-how-thieves-pulled-off-daring-daytime-heist-of-french-crown-jewels-in-7-minutes-163641931.html\\nFrench authorities are continuing to investigate a shocking daytime robbery at the Louvre in Paris, where officials say four thieves used a truck-mounted basket lift and power tools to make off with priceless crown jewels from the world’s most-visited museum on Sunday.\\n\\nThe brazen heist was carried out in less than eight minutes, officials said. [...] The robbery occurred on Sunday around 9:30 a.m\\n\\n5. Everything we know about the Louvre jewellery heist - BBC\\nhttps://www.bbc.com/news/articles/cg7nrlkg0zxo\\n1 day ago Image 19Image 20: Split screen of a ladder and Andrew Harding 'An embarrassment': BBC reports at the scene of Louvre robbery -------------------------------------------------------------- The Louvre Museum was shut after priceless jewels were stolen in a heist. 1 day ago [...] \\\"We are all disappointed and angry,\\\" she said, and it is \\\"difficult to understand how it happened so easily.\\\"\\n\\nG\"\n    }\n}"
+				},
+				{
+					"name": "New Request",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"query\":\"what are the different types of distance measuring sensors?\"}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/agent",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"agent"
+							],
+							"query": [
+								{
+									"key": "query",
+									"value": "what ",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "",
+					"header": [
+						{
+							"key": "date",
+							"value": "Tue, 21 Oct 2025 15:07:02 GMT"
+						},
+						{
+							"key": "server",
+							"value": "uvicorn"
+						},
+						{
+							"key": "content-length",
+							"value": "2641"
+						},
+						{
+							"key": "content-type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"query\": \"what are the different types of distance measuring sensors?\",\n    \"context_judge_result\": \"context_provided\",\n    \"agent_response\": {\n        \"tool_used\": \"local_llm\",\n        \"summary\": \"There are several types of distance measuring sensors, which can be categorized based on their measurement principles, signal processing methods, and application-specific requirements. Here are some common types of distance measuring sensors:\\n\\n1. **Infrared (IR) Sensors**: These sensors use infrared radiation to measure distances by detecting the changes in intensity or reflection. They are commonly used in applications such as remote control systems, object detection, and safety monitoring.\\n2. **Ultrasonic Sensors**: Ultrasonic sensors emit high-frequency sound waves towards a target object, which bounces back as an echo. The distance is calculated based on the time difference between the emitted wave and the received echo. They are commonly used in robotics, navigation, and industrial automation applications.\\n3. **Optical Distance Sensors**: These sensors use light to measure distances by detecting changes in reflectivity or transmission. They can be categorized into two sub-types:\\n\\t* **Visual distance sensors** (e.g., cameras): These sensors use visible light to estimate distances.\\n\\t* **Infrared light sensors** (e.g., thermal imaging sensors): These sensors use infrared light to detect temperature differences and estimate distances.\\n4. **Radiometric Distance Sensors**: Radiometric distance sensors measure distances by detecting changes in the radiation emitted or absorbed by an object. They are commonly used in applications such as remote sensing, environmental monitoring, and navigation.\\n5. **Acoustic Distance Sensors**: These sensors use sound waves to measure distances by detecting the time difference between the emitted and received sounds. They are commonly used in industrial automation, robotics, and building inspection applications.\\n6. **Laser Distance Sensors**: Laser distance sensors use laser light to measure distances by detecting changes in reflection or diffraction patterns. They are commonly used in applications such as navigation, robotics, and precise positioning systems.\\n7. **Capacitive Distance Sensors**: Capacitive distance sensors use changes in capacitance between two conductive plates to estimate distances. They are commonly used in applications such as proximity sensing, object detection, and pressure measurement.\\n\\nThese types of distance measuring sensors have different strengths, weaknesses, and application-specific requirements, making them suitable for various industries and use cases.\"\n    }\n}"
+				}
+			]
+		}
+	]
+}
