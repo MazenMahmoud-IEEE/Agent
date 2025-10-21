@@ -2,6 +2,7 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from src.api.context_judge_api import router as context_router
 from src.api.web_search_api import router as web_router
+from src.api.agent_api import router as agent_router
 
 app = FastAPI(title="Agent - API (Week1)")
 
@@ -14,7 +15,7 @@ app.add_middleware(
 
 app.include_router(context_router, prefix="/api")
 app.include_router(web_router, prefix="/api")
-
+app.include_router(agent_router, prefix="/api")
 
 @app.get("/")
 async def root():
