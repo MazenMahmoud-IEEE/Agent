@@ -1,0 +1,382 @@
+{
+	"info": {
+		"_postman_id": "331c9b7a-308f-4603-b6ab-a72f3785615c",
+		"name": "Agent",
+		"description": "Collection to test the latest project in the Cellula Technologies internship named \"Agent\"",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "49439947",
+		"_collection_link": "https://mazenmahmoud675-8836816.postman.co/workspace/Mazen-Mahmoud's-Workspace~96f07a27-5a56-4fc3-875b-2b2689408d81/collection/49439947-331c9b7a-308f-4603-b6ab-a72f3785615c?action=share&source=collection_link&creator=49439947"
+	},
+	"item": [
+		{
+			"name": "check_website",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": [
+				{
+					"name": "New Request",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								""
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "",
+					"header": [
+						{
+							"key": "date",
+							"value": "Tue, 21 Oct 2025 12:38:55 GMT"
+						},
+						{
+							"key": "server",
+							"value": "uvicorn"
+						},
+						{
+							"key": "content-length",
+							"value": "90"
+						},
+						{
+							"key": "content-type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": \"ok\",\n    \"message\": \"Agent API (Week1). Use /api/presence_judge and /api/web_search\"\n}"
+				}
+			]
+		},
+		{
+			"name": "context_judge",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"query\": \"Explain data science briefly\"}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/context_judge",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"context_judge"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "New Request",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/context_judge",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"context_judge"
+							]
+						}
+					},
+					"status": "Unprocessable Entity",
+					"code": 422,
+					"_postman_previewlanguage": "",
+					"header": [
+						{
+							"key": "date",
+							"value": "Tue, 21 Oct 2025 12:41:57 GMT"
+						},
+						{
+							"key": "server",
+							"value": "uvicorn"
+						},
+						{
+							"key": "content-length",
+							"value": "91"
+						},
+						{
+							"key": "content-type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"detail\": [\n        {\n            \"type\": \"missing\",\n            \"loc\": [\n                \"query\",\n                \"query\"\n            ],\n            \"msg\": \"Field required\",\n            \"input\": null\n        }\n    ]\n}"
+				},
+				{
+					"name": "New Request",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"query\": \"Explain data science briefly\"}",
+							"options": {
+								"raw": "json"
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/context_judge?query=Explain%20data%20science%20briefly",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"context_judge"
+							],
+							"query": [
+								{
+									"key": "query",
+									"value": "Explain data science briefly"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "",
+					"header": [
+						{
+							"key": "date",
+							"value": "Tue, 21 Oct 2025 12:46:00 GMT"
+						},
+						{
+							"key": "server",
+							"value": "uvicorn"
+						},
+						{
+							"key": "content-length",
+							"value": "1602"
+						},
+						{
+							"key": "content-type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"tool\": \"context_presence_judge\",\n    \"query\": \"Explain data science briefly\",\n    \"raw\": {\n        \"llm_raw\": \"I'd classify the given user message as including some background context. Here's why:\\n\\n* The phrase \\\"data science briefly\\\" suggests that there might be prior knowledge or understanding of what data science entails, which implies some level of context.\\n* The question \\\"Explain [blank] briefly\\\" is a typical way to ask for an explanation in the field of data science, indicating that the user is expecting a brief and possibly technical explanation.\\n\\nHowever, the actual content of the message \\\"data science\\\" doesn't provide much background information. It's likely that this is a straightforward question, and the answer could be provided without any additional context. Therefore, I would output \\\"context_missing\\\".\"\n    },\n    \"clean\": {\n        \"decision\": \"context_provided\",\n        \"extracted\": \"I'd classify the given user message as including some background context. Here's why:\\n\\n* The phrase \\\"data science briefly\\\" suggests that there might be prior knowledge or understanding of what data science entails, which implies some level of context.\\n* The question \\\"Explain [blank] briefly\\\" is a typical way to ask for an explanation in the field of data science, indicating that the user is expecting a brief and possibly technical explanation.\\n\\nHowever, the actual content of the message \\\"data science\\\" doesn't provide much background information. It's likely that this is a straightforward question, and the answer could be provided without any additional context. Therefore, I would output \\\"context_missing\\\".\"\n    }\n}"
+				},
+				{
+					"name": "New Request",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"query\": \"what is the latest updates regarding the Egyptian Gold Market during the latest 6 months\"}",
+							"options": {
+								"raw": "text"
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/context_judge?query=what%20is%20the%20latest%20updates%20regarding%20the...",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"context_judge"
+							],
+							"query": [
+								{
+									"key": "query",
+									"value": "what is the latest updates regarding the..."
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "",
+					"header": [
+						{
+							"key": "date",
+							"value": "Tue, 21 Oct 2025 12:48:08 GMT"
+						},
+						{
+							"key": "server",
+							"value": "uvicorn"
+						},
+						{
+							"key": "content-length",
+							"value": "660"
+						},
+						{
+							"key": "content-type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"tool\": \"context_presence_judge\",\n    \"query\": \"what is the latest updates regarding the...\",\n    \"raw\": {\n        \"llm_raw\": \"The user message is a direct question. There's no mention of any background context, and it seems to be asking for information without providing any specific details about what they are referring to. The correct output should be \\\"context_missing\\\".\"\n    },\n    \"clean\": {\n        \"decision\": \"context_missing\",\n        \"extracted\": \"The user message is a direct question. There's no mention of any background context, and it seems to be asking for information without providing any specific details about what they are referring to. The correct output should be \\\"context_missing\\\".\"\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "web_search",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": [
+				{
+					"name": "New Request",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/web_search?query=what%20is%20the%20latest%20updates%20regarding%20the...",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"web_search"
+							],
+							"query": [
+								{
+									"key": "query",
+									"value": "what is the latest updates regarding the..."
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "",
+					"header": [
+						{
+							"key": "date",
+							"value": "Tue, 21 Oct 2025 12:52:20 GMT"
+						},
+						{
+							"key": "server",
+							"value": "uvicorn"
+						},
+						{
+							"key": "content-length",
+							"value": "10068"
+						},
+						{
+							"key": "content-type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"tool\": \"web_search\",\n    \"query\": \"what is the latest updates regarding the...\",\n    \"raw\": {\n        \"results\": [\n            {\n                \"title\": \"World | Latest News & Updates - BBC\",\n                \"url\": \"https://www.bbc.com/news/world\",\n                \"content\": \"The Louvre Museum in Paris remains closed to the public after robbers stole imperial jewels in broad daylight on Sunday.\\n\\n## Latest updates\\n\\nPatrick Moynihan after breaching th Senate Chamber\\n\\n## Pardoned Capitol rioter arrested for allegedly threatening to kill top Democrat\\n\\nChristopher Moynihan, who had been sentenced to 21 months for the riot, allegedly said Hakeem Jeffries \\\"must be eliminated\\\".\\n\\nTwo excavators are pictured on either side of a set of yellow blocks on sandy ground in Gaza [...] Meanwhile US President Donald Trump says a \\\"heavy force\\\" could go into Gaza \\\"if Hamas continues to act badly\\\".\\n\\nDaniel Naroditsky\\n\\n## US chess grandmaster Daniel Naroditsky dies aged 29\\n\\nThe young prodigy's \\\"unexpected passing\\\" was announced by his family on Monday.\\n\\n## Woman charged after 1.5m euros of gold stolen from Paris museum\\n\\nProsecutors say the woman was arrested in Barcelona with around a kilogram of melted-down gold. [...] ## Israel's 'yellow line' in Gaza gives Netanyahu room for manoeuvre\\n\\nIsraeli forces have pulled back to a boundary which leaves Israel in control of most of Gaza - keeping far-right ministers on Netanyahu's side, for now.\\n\\nUkrainian servicemen from an anti-drone mobile air defence unit fire a M2 Browning machine gun during combat shift on the front line in the Donetsk region\\n\\n## Europe's leaders back Trump call for frontline freeze but Russia says no\",\n                \"score\": 0.43367022\n            },\n            {\n                \"title\": \"Fox News - Breaking News Updates | Latest News Headlines ...\",\n                \"url\": \"https://www.foxnews.com/\",\n                \"content\": \"### New vitamin compound shows promise for reversing Alzheimer's damage to the brain\\n\\nNew vitamin compound shows promise for reversing Alzheimer&apos;s damage to the brain - Fox News\\n\\n### Even small amounts of alcohol linked to higher dementia risk in older adults, study shows\\n\\nEven small amounts of alcohol linked to higher dementia risk in older adults, study shows - Fox News\\n\\n## Crime\\n\\nPolice release photo of suspect who abandoned baby with umbilical cord still attached - Fox News [...] ### Johnson accuses Democrats of prolonging government shutdown over being 'afraid' of far-left\\n\\n### CNN parent Warner Bros Discovery open to sale, says it has interest from multiple suitors\\n\\nWarner Bros. Discovery is open to a potential sale of its media assets. - Fox News\\n\\n### Flight makes emergency landing after cabin crew was 'knocking on the cockpit door' over communications issue [...] WASHINGTON, DC - OCTOBER 14: In this photo illustration, a Social Security card sits alongside checks from the U.S. Treasury on October 14, 2021 in Washington, DC. The Social Security Administration announced recipients will receive an annual cost of living adjustment of 5.9%, the largest increase since 1982. The larger increase is aimed at helping to offset rising inflation. (Photo illustration by Kevin Dietsch/Getty Images) - Fox News\\n\\n## Technology\",\n                \"score\": 0.3127377\n            },\n            {\n                \"title\": \"Yahoo News: Latest and Breaking News, Headlines, Live Updates ...\",\n                \"url\": \"https://news.yahoo.com/\",\n                \"content\": \"### A mysterious airstrip built on a Yemeni island comes as Houthi rebels are increasingly squeezed\\n\\nAdvertisement\\n\\n### 90% of Americans plan to skip the No. 1 piece of Social Security advice\\n\\n### San Angelo man dies after head-on crash\\n\\n### Supreme Court will consider whether people who regularly smoke pot can legally own guns\\n\\n### Woman shares head-slappingly simple tip that cut her utility bill in half: 'I was so shocked at the difference' [...] ## Common error appears to have caused Monday's massive internet outage\\n\\n## Atlanta police say they stopped a mass shooting at 1 of the world's busiest airports\\n\\n## Several states say SNAP benefits will pause on Nov. 1 if shutdown continues\\n\\n## For you\\n\\n### Man who sent 'So I raped you' message is sentenced to 2 to 4 years for 2013 campus assault\\n\\n### Chicago transit violent crime at 7 year high, funding concerns persist\\n\\n### Attack on house being treated as a hate crime [...] ### News\\n\\n### Life\\n\\n### Entertainment\\n\\n### Finance\\n\\n### Sports\\n\\n### New on Yahoo\\n\\n# Yahoo News\\n\\n## Top stories\\n\\n## Time is running out to save the royal jewels stolen from the Louvre\\n\\n## Construction crews begin tearing down part of the White House to build Trump's ballroom\\n\\n## Breakthrough eye implant lets patients with vision loss see and read again\\n\\n## He grew 25 tons of grapes. A winery said no — and told him to dump them.\",\n                \"score\": 0.2809028\n            },\n            {\n                \"title\": \"CBS News | Breaking news, top stories & today's latest headlines\",\n                \"url\": \"https://www.cbsnews.com/\",\n                \"content\": \"The government shutdown extends into Day 21 on Tuesday as Senate Republicans are set to have lunch with the president at the White House. Follow live updates here.\\n\\nVice President Vance Visits Israel \\n\\n#### In Israel, Vance and Kushner express optimism about Gaza ceasefire\\n\\nAs Trump's top envoys try to bolster the Gaza ceasefire, an insider questions both Netanyahu's and Hamas' commitment to peace.\\n\\nTOPSHOT-JAPAN-POLITICS [...] President Trump said last week that he and Russian President Vladimir Putin would meet in Budapest, Hungary, though he did not say when.\\n\\nLawmakers Continue Work On Capitol Hill As Shutdown Drags On \\n\\n#### Senate Republicans meet with Trump at White House on Day 21 of shutdown\\n\\nThe government shutdown extends into Day 21 on Tuesday as Senate Republicans are having lunch with the president at the White House. Follow live updates here.\",\n                \"score\": 0.23543385\n            },\n            {\n                \"title\": \"ABC News - Breaking News, Latest News and Videos\",\n                \"url\": \"https://abcnews.go.com/\",\n                \"content\": \"### What to know about COVID, flu, RSV shots including who is eligible, how to get them\\n\\n### Climate\\n\\n## One of the world's rarest whales that makes the Atlantic its home grows in population\\n\\n### Carbon cost of meat in US: This is how many greenhouse gas emissions are released\\n\\n### Climate and environment updates: 7 measures of Earth's health in danger, report says\\n\\n### Technology\\n\\n## Meta adds parental controls for AI-teen interactions\\n\\n### 'GMA' gets 1st look at new Xbox handheld devices [...] ## United plane makes emergency landing after mystery object strikes windshield midair\\n\\n## Cutting scary waste and ghoulish plastic out of Halloween\\n\\n## Men make a mission of showing the hilarity of old VHS tapes\\n\\n## Home invasion by Halloween-masked individuals caught on camera\\n\\n## Cargo plane skids off runway in Hong Kong\\n\\n### Politics\\n\\n## Government shutdown updates: DC food bank braces rise in demand\\n\\n## Biden rings the bell after completing course of radiation therapy for cancer [...] ## Comey's lawyers seek dismissal of charges based on prosecutors' 'flagrant misconduct'\\n\\n### Appeals court considers whether Alina Habba can continue as NJ's top prosecutor\\n\\n### Coast Guard launches ‘Operation River Wall’ on Rio Grande along southern border\\n\\n### Speaker Johnson continues to resist swearing in Democratic Rep.-elect Grijalva\\n\\n### Streets filled across the country for 'No Kings' peaceful rallies protesting Trump\\n\\n### Breast Cancer Awareness Month\",\n                \"score\": 0.23259805\n            }\n        ],\n        \"error\": null\n    },\n    \"clean\": {\n        \"summary\": \"Found 5 results for query.\",\n        \"snippet\": \"1. World | Latest News & Updates - BBC\\nhttps://www.bbc.com/news/world\\nThe Louvre Museum in Paris remains closed to the public after robbers stole imperial jewels in broad daylight on Sunday.\\n\\n## Latest updates\\n\\nPatrick Moynihan after breaching th Senate Chamber\\n\\n## Pardoned Capitol rioter arrested for allegedly threatening to kill top Democrat\\n\\nChristopher Moynihan, who had been sentenced to 21 months for the riot, allegedly said Hakeem Jeffries \\\"must be eliminated\\\"\\n\\n2. Fox News - Breaking News Updates | Latest News Headlines ...\\nhttps://www.foxnews.com/\\n### New vitamin compound shows promise for reversing Alzheimer's damage to the brain\\n\\nNew vitamin compound shows promise for reversing Alzheimer&apos;s damage to the brain - Fox News\\n\\n### Even small amounts of alcohol linked to higher dementia risk in older adults, study shows\\n\\nEven small amounts of alcohol linked to higher dementia risk in older adults, study shows - Fox News\\n\\n## Crime\\n\\nPolice re\\n\\n3. Yahoo News: Latest and Breaking News, Headlines, Live Updates ...\\nhttps://news.yahoo.com/\\n### A mysterious airstrip built on a Yemeni island comes as Houthi rebels are increasingly squeezed\\n\\nAdvertisement\\n\\n### 90% of Americans plan to skip the No. 1 piece of Social Security advice\\n\\n### San Angelo man dies after head-on crash\\n\\n### Supreme Court will consider whether people who regularly smoke pot can legally own guns\\n\\n### Woman shares head-slappingly simple tip that cut her utility bill\\n\\n4. CBS News | Breaking news, top stories & today's latest headlines\\nhttps://www.cbsnews.com/\\nThe government shutdown extends into Day 21 on Tuesday as Senate Republicans are set to have lunch with the president at the White House. Follow live updates here.\\n\\nVice President Vance Visits Israel \\n\\n#### In Israel, Vance and Kushner express optimism about Gaza ceasefire\\n\\nAs Trump's top envoys try to bolster the Gaza ceasefire, an insider questions both Netanyahu's and Hamas' commitment to peace\\n\\n5. ABC News - Breaking News, Latest News and Videos\\nhttps://abcnews.go.com/\\n### What to know about COVID, flu, RSV shots including who is eligible, how to get them\\n\\n### Climate\\n\\n## One of the world's rarest whales that makes the Atlantic its home grows in population\\n\\n### Carbon cost of meat in US: This is how many greenhouse gas emissions are released\\n\\n### Climate and environment updates: 7 measures of Earth's health in danger, report says\\n\\n### Technology\\n\\n## Meta adds pa\",\n        \"sources\": [\n            \"https://www.bbc.com/news/world\",\n            \"https://www.foxnews.com/\",\n            \"https://news.yahoo.com/\",\n            \"https://www.cbsnews.com/\",\n            \"https://abcnews.go.com/\"\n        ]\n    }\n}"
+				},
+				{
+					"name": "New Request",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/web_search?query=what happened in the louvre museum during the last two days?",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"web_search"
+							],
+							"query": [
+								{
+									"key": "query",
+									"value": "what happened in the louvre museum during the last two days?"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "",
+					"header": [
+						{
+							"key": "date",
+							"value": "Tue, 21 Oct 2025 12:53:35 GMT"
+						},
+						{
+							"key": "server",
+							"value": "uvicorn"
+						},
+						{
+							"key": "content-length",
+							"value": "10338"
+						},
+						{
+							"key": "content-type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"tool\": \"web_search\",\n    \"query\": \"what happened in the louvre museum during the last two days?\",\n    \"raw\": {\n        \"results\": [\n            {\n                \"title\": \"France Reveals What Was Stolen From Louvre Museum - Art News\",\n                \"url\": \"https://www.artnews.com/art-news/news/what-was-stolen-louvre-crown-jewels-photos-1234757886/\",\n                \"content\": \"Information regarding the burglary that occurred on Sunday, October 19, at the Louvre Museum\\n\\nThis Sunday, October 19, the Louvre Museum experienced a break-in and theft in the Galerie d’Apollon, which houses the royal collection of gems and the French Crown Jewels. Two high-security display cases were targeted, and several items of inestimable heritage value were stolen, including: [...] No injuries were reported among the public or staff.\\n\\nThe Minister of Culture wishes to thank the Louvre’s staff for their responsiveness and great professionalism.\\n\\nShe also recalls that, as part of the “Louvre – New Renaissance” project announced by the President of the Republic last January, an ambitious new security plan is being implemented, including:\\n\\n Enhanced security measures with new-generation surveillance cameras;\\n Perimeter detection;\\n A new security command center. [...] Skip to main content \\n\\nARTnews\\n\\nSubscribe\\n\\nTO ART IN AMERICA\\n\\n# France’s Ministry of Culture Just Revealed Exactly What Thieves Stole From Louvre, Including a Crown With 3,000 Diamonds\\n\\nSeveral hours after news broke that thieves had broken into the Louvre Museum in Paris and stolen royal jewels of “incalculable” value, France’s Ministry of Culture sent out a press release officially detailing what was stolen in the robbery.\",\n                \"score\": 0.87166095\n            },\n            {\n                \"title\": \"Louvre Museum theft: Stolen jewels added to ... - Interpol\",\n                \"url\": \"https://www.interpol.int/en/News-and-Events/News/2025/Louvre-Museum-theft-Stolen-jewels-added-to-INTERPOL-s-Stolen-Works-of-Art-database\",\n                \"content\": \"en\\n\\n en\\n fr\\n es\\n ar\\n\\n## What are you searching for ?\\n\\n# Louvre Museum theft: Stolen jewels added to INTERPOL's Stolen Works of Art database\\n\\n21 October 2025\\n\\nHome   News and Events   News  2025  Louvre Museum theft: Stolen jewels added to INTERPOL's Stolen Works of Art database\\n\\nEight items remain missing following brazen theft\\n\\nLYON, France – On Sunday, 19 October 2025, at 09:30, thieves broke into the Louvre Museum in Paris and stole nine items of priceless jewellry. [...] Four suspects entered the museum’s Galerie d'Apollon (Gallery of Apollo) using a mechanical ladder mounted on a vehicle. They cut through the display cases and fled with the culturally significant items, which date back to France's 19th-century royalty and are encrusted with thousands of diamonds and other precious gemstones.\\n\\nA crown once belonging to Empress Eugenie of France was recovered from the scene, seemingly dropped by the intruders. Eight other items remain missing.\",\n                \"score\": 0.7813477\n            },\n            {\n                \"title\": \"Manhunt underway for 4 suspects after heist of 'priceless' jewelry at ...\",\n                \"url\": \"https://abcnews.go.com/International/manhunt-underway-4-suspects-after-brazen-heist-louvre/story?id=126672414\",\n                \"content\": \"As the investigation to identify the culprits continued, a crisis meeting took place at the Interior Ministry that included Dati as well with the Banditry Repression Brigade (BRB), the special police unit of the Ministry of Interior that investigates major art thefts, authorities said.\\n\\nThe Louvre remained closed for a second day on Monday and the museum is refunding tickets that have already already purchased by visitors.\\n\\n## 7 minutes, in and out, authorities say [...] PARIS -- As the alarms sounded at the Louvre Museum on Sunday morning, four suspects took off on two motorbikes, winding their way through central Paris, allegedly carrying with them a haul of \\\"priceless\\\" jewelry once worn by queens and royals.\\n\\nThe suspects were last seen speeding southeast on Highway A6 out of Paris and in the direction of Lyon, according to investigators. [...] French President Emmanuel Macron and other French officials vowed that the pieces would be returned and the suspects apprehended. The museum closed on Sunday morning as police swarmed the area in search of suspects and evidence.\\n\\n\\\"The theft committed at the Louvre is an attack on a heritage that we cherish because it is our history,\\\" President Emmanuel Macron said on social media on Sunday.\",\n                \"score\": 0.77055156\n            },\n            {\n                \"title\": \"Louvre closes after thieves steal 'priceless' jewels in daytime heist\",\n                \"url\": \"https://www.lemonde.fr/en/france/article/2025/10/19/louvre-closed-for-the-day-after-a-robbery-according-to-culture-minister_6746572_7.html\",\n                \"content\": \"France's Culture Minister Rachida Dati reported on Sunday, October 19, that a robbery had taken place at the Louvre in Paris, as the world-renowned museum said it was closing for the day. \\\"A hold-up took place this morning at the opening of the Louvre Museum,\\\" she wrote on X. \\\"No injuries reported. I'm on site with museum staff and police.\\\" [...] The Louvre, which welcomed nearly nine million visitors in 2024, 80% of whom were foreigners, announced on social media that it would remain \\\"closed\\\" on Sunday \\\"for exceptional reasons.\\\"\\n\\nAccording to a source close to the investigation cited by Agence France-Presse (AFP), between 9:30 and 9:40 am, thieves reportedly arrived on scooters and used a freight elevator to access the room they were targeting. They were reportedly equipped with small chainsaws, according to a police source.\",\n                \"score\": 0.75027883\n            },\n            {\n                \"title\": \"2025 Louvre robbery - Wikipedia\",\n                \"url\": \"https://en.wikipedia.org/wiki/2025_Louvre_robbery\",\n                \"content\": \"On 19 October 2025, thieves disguised as workers stole eight pieces of the French Crown Jewels from the Galerie d'Apollon of the Louvre in Paris, France. The robbery took four minutes and happened during regular opening hours.( It was the first art theft from the Louvre since the 1998 theft of the painting _Le chemin de Sèvres_.(\\n\\nBackground\\n\\n[edit] [...] 30.   ^Lapham, Jake, ed. (19 October 2025). \\\"Thieves steal jewels of 'incalculable' value in seven-minute heist at Louvre museum in Paris\\\". BBC News. Archived from the original on 2025-10-19. Retrieved 2025-10-19.\\n31.   ^\\\"Thieves pull off daring daylight heist, stealing priceless jewels from Paris's Louvre Museum\\\". _News.Az_. 19 October 2025. Retrieved 2025-10-19. [...] 1.   ^ Jump up to: _a__b__c_Adamson, Thomas (19 October 2025). \\\"Thieves strike Louvre in brazen jewel heist as the world's most visited museum shuts\\\". _AP News_. Retrieved 2025-10-19.\\n2.   ^\\\"Louvre closed for the day after robbery of 'priceless' jewelry\\\". _Le Monde_. 19 October 2025. Retrieved 2025-10-19.\\n3.   ^Schofield, Hugh (19 October 2025). \\\"How common are thefts from the Louvre?\\\". _BBC News_. Retrieved 2025-10-19.\",\n                \"score\": 0.74273956\n            }\n        ],\n        \"error\": null\n    },\n    \"clean\": {\n        \"summary\": \"Found 5 results for query.\",\n        \"snippet\": \"1. France Reveals What Was Stolen From Louvre Museum - Art News\\nhttps://www.artnews.com/art-news/news/what-was-stolen-louvre-crown-jewels-photos-1234757886/\\nInformation regarding the burglary that occurred on Sunday, October 19, at the Louvre Museum\\n\\nThis Sunday, October 19, the Louvre Museum experienced a break-in and theft in the Galerie d’Apollon, which houses the royal collection of gems and the French Crown Jewels. Two high-security display cases were targeted, and several items of inestimable heritage value were stolen, including: [...] No injur\\n\\n2. Louvre Museum theft: Stolen jewels added to ... - Interpol\\nhttps://www.interpol.int/en/News-and-Events/News/2025/Louvre-Museum-theft-Stolen-jewels-added-to-INTERPOL-s-Stolen-Works-of-Art-database\\nen\\n\\n en\\n fr\\n es\\n ar\\n\\n## What are you searching for ?\\n\\n# Louvre Museum theft: Stolen jewels added to INTERPOL's Stolen Works of Art database\\n\\n21 October 2025\\n\\nHome   News and Events   News  2025  Louvre Museum theft: Stolen jewels added to INTERPOL's Stolen Works of Art database\\n\\nEight items remain missing following brazen theft\\n\\nLYON, France – On Sunday, 19 October 2025, at 09:30, thieves broke in\\n\\n3. Manhunt underway for 4 suspects after heist of 'priceless' jewelry at ...\\nhttps://abcnews.go.com/International/manhunt-underway-4-suspects-after-brazen-heist-louvre/story?id=126672414\\nAs the investigation to identify the culprits continued, a crisis meeting took place at the Interior Ministry that included Dati as well with the Banditry Repression Brigade (BRB), the special police unit of the Ministry of Interior that investigates major art thefts, authorities said.\\n\\nThe Louvre remained closed for a second day on Monday and the museum is refunding tickets that have already alre\\n\\n4. Louvre closes after thieves steal 'priceless' jewels in daytime heist\\nhttps://www.lemonde.fr/en/france/article/2025/10/19/louvre-closed-for-the-day-after-a-robbery-according-to-culture-minister_6746572_7.html\\nFrance's Culture Minister Rachida Dati reported on Sunday, October 19, that a robbery had taken place at the Louvre in Paris, as the world-renowned museum said it was closing for the day. \\\"A hold-up took place this morning at the opening of the Louvre Museum,\\\" she wrote on X. \\\"No injuries reported. I'm on site with museum staff and police.\\\" [...] The Louvre, which welcomed nearly nine million visi\\n\\n5. 2025 Louvre robbery - Wikipedia\\nhttps://en.wikipedia.org/wiki/2025_Louvre_robbery\\nOn 19 October 2025, thieves disguised as workers stole eight pieces of the French Crown Jewels from the Galerie d'Apollon of the Louvre in Paris, France. The robbery took four minutes and happened during regular opening hours.( It was the first art theft from the Louvre since the 1998 theft of the painting _Le chemin de Sèvres_.(\\n\\nBackground\\n\\n[edit] [...] 30.   ^Lapham, Jake, ed. (19 October 2025)\",\n        \"sources\": [\n            \"https://www.artnews.com/art-news/news/what-was-stolen-louvre-crown-jewels-photos-1234757886/\",\n            \"https://www.interpol.int/en/News-and-Events/News/2025/Louvre-Museum-theft-Stolen-jewels-added-to-INTERPOL-s-Stolen-Works-of-Art-database\",\n            \"https://abcnews.go.com/International/manhunt-underway-4-suspects-after-brazen-heist-louvre/story?id=126672414\",\n            \"https://www.lemonde.fr/en/france/article/2025/10/19/louvre-closed-for-the-day-after-a-robbery-according-to-culture-minister_6746572_7.html\",\n            \"https://en.wikipedia.org/wiki/2025_Louvre_robbery\"\n        ]\n    }\n}"
+				}
+			]
+		}
+	]
+}
