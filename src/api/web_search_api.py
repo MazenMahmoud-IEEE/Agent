@@ -1,7 +1,6 @@
 from fastapi import APIRouter, HTTPException, Query
 from typing import Dict, Any
 import os
-
 from src.tools.web_search import WebSearchTool
 
 router = APIRouter()
