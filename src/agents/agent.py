@@ -73,9 +73,22 @@ class ContextSearchAgent:
 
                 formatted_results = self.format_search_results(raw_results)
 
+                # 🧠 NEW STEP: Summarize using LLM
+                summary_prompt = f"""
+                Summarize the following recent web search results into a clear, factual paragraph.
+                Focus only on the key facts, dates, and outcomes. Be concise and objective.
+
+                Query: {query}
+
+                Web Results:
+                {formatted_results}
+                """
+
+                llm_summary = self.llm.invoke(summary_prompt)
+
                 response = {
                     "tool_used": "web_search",
-                    "summary": "Based on the latest web search results, here's a summary.",
+                    "summary": llm_summary,
                     "results": formatted_results
                 }
             else:
